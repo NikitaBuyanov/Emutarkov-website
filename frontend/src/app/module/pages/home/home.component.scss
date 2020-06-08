@@ -1,0 +1,24 @@
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+.hero {
+  align-items: center;
+  background: url("../../../../assets/img/bg-black.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  min-height: 280px;
+  overflow: hidden;
+
+}
+
+
+mat-card {
+  margin-top: 16px;
+  max-width: 600px;
+}

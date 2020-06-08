@@ -1,0 +1,19 @@
+{
+  "name": "emutarkov-server",
+  "description": "Escape From Tarkov server emulator",
+  "version": "1.0.0",
+  "main": "scripts/main.js",
+  "author": "EmuTarkov",
+  "license": "MIT",
+  "scripts": {
+    "build": "node dev/src/build.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0"
+  }
+}

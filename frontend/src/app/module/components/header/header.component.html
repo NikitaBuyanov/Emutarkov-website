@@ -1,0 +1,62 @@
+<mat-toolbar class="mat-elevation-z4" color="primary">
+  <img src="assets/img/logo.png">
+
+  <button [matMenuTriggerFor]="versionMenu" mat-button color="accent">
+    {{selectedVersion.viewValue}}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-icon>chevron_right</mat-icon>
+
+  <button [matMenuTriggerFor]="catMenu" mat-button color="accent">
+    {{selectedCategory.viewValue}}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-icon>chevron_right</mat-icon>
+
+  <button [matMenuTriggerFor]="typeMenu" mat-button color="accent">
+    {{selectedType.viewValue}}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <span class="filler"></span>
+
+  <a routerLink="/home" mat-button>Home</a>
+  <a routerLink="/mods" mat-button>Mods</a>
+  <a href="https://discord.gg/3sR4KKS" target="_blank" mat-button>Discord</a>
+  <a href="https://github.com/trustedLeaks" target="_blank" mat-stroked-button color="accent">Get EmuTarkov</a>
+</mat-toolbar>
+
+<mat-menu #versionMenu="matMenu">
+  <button mat-menu-item *ngFor="let version of versions"
+    (click)="selectVersion(version.value)">{{version.viewValue}}</button>
+</mat-menu>
+
+<mat-menu #catMenu="matMenu">
+  <button mat-menu-item *ngFor="let category of categories"
+    (click)="selectCategory(category.value)">{{category.viewValue}}</button>
+</mat-menu>
+
+<mat-menu #typeMenu="matMenu">
+  <ng-container *ngFor="let type of types">
+    <!-- All categories mod types -->
+    <ng-container *ngIf="selectedCategory.value === categories[0].value">
+      <button mat-menu-item *ngIf="!type.type.includes('_all')" (click)="selectType(type.value)">
+        {{type.viewValue}}
+      </button>
+    </ng-container>
+
+    <!-- Server mod types -->
+    <ng-container *ngIf="selectedCategory.value === categories[1].value">
+      <button mat-menu-item *ngIf="!type.type.includes('client') && type.type !== 'none'"
+        (click)="selectType(type.value)">{{type.viewValue}}</button>
+    </ng-container>
+
+    <!-- Client mod types -->
+    <ng-container *ngIf="selectedCategory.value === categories[2].value">
+      <button mat-menu-item *ngIf="!type.type.includes('server') && type.type !== 'none'"
+        (click)="selectType(type.value)">{{type.viewValue}}</button>
+    </ng-container>
+  </ng-container>
+</mat-menu>

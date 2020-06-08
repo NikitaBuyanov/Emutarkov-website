@@ -1,0 +1,12 @@
+<div class="mod-list">
+  <div class="mod-tile mat-elevation-z1" *ngFor="let mod of mods">
+    <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <div class="mod-infos">
+      <a href="#">
+        <h3>{{mod.name}}</h3>
+      </a>
+      <span>Categories: (id)<a href="#">{{mod.categoryID}}</a>&nbsp;| Tags: &nbsp;<a href="#">{{mod.tags}}</a></span>
+      <p>{{mod.description}}</p>
+    </div>
+  </div>
+</div>

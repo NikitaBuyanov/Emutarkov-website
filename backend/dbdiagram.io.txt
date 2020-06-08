@@ -1,0 +1,30 @@
+
+// Creating tables
+Table categories as U {
+  categoryID int [pk] 
+  categoryName text
+}
+
+Table category_childs {
+  categoryID int
+  childCategory int
+ }
+ 
+Table mods {
+  modID int [pk]
+  name text
+  categoryID int
+  picture text
+  description text
+  version text
+  tags text
+  size int
+  dateCreated timestamp
+  dateUpdated timestamp
+  isValid tinyint
+ }
+
+Ref: mods.categoryID > categories.categoryID
+Ref: category_childs.categoryID > categories.categoryID
+Ref: category_childs.childCategory > categories.categoryID
+//Ref: merchants.country_code > countries.code

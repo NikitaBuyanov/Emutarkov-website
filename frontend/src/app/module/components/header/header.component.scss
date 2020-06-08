@@ -1,0 +1,22 @@
+:host {
+  position: fixed;
+  width: 100%;
+}
+
+img {
+  height: 40px;
+}
+
+img,
+.title {
+  margin-right: 16px;
+}
+
+.mat-button,
+.mat-stroked-button {
+  margin-right: 8px;
+}
+
+.filler {
+  flex: 1 1 auto;
+}

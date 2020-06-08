@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  height: calc(192px - 32px);
+  padding: 16px;
+}
+
+.mat-list-item,
+.mat-button,
+.mat-subheader {
+  color: #fff;
+}

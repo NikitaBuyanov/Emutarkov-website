@@ -1,0 +1,20 @@
+div {
+  display: grid;
+  grid-template: "h"auto "c"1fr / 1fr;
+  height: 100%;
+}
+
+app-header {
+  grid-area: h;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.page-wrapper {
+  grid-area: c;
+  margin-top: 64px;
+  max-height: calc(100% - 64px);
+  position: relative;
+  z-index: 0;
+}

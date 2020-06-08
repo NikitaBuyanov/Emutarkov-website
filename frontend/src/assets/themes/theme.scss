@@ -1,0 +1,74 @@
+@import '../../../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+$emu-primary: (50: #090909,
+  100: #090909,
+  200: #090909,
+  300: #090909,
+  400: #090909,
+  500: #090909,
+  600: #090909,
+  700: #090909,
+  800: #090909,
+  900: #090909,
+  A100: #090909,
+  A200: #090909,
+  A400: #090909,
+  A700: #090909,
+  contrast: (50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  ));
+
+$emu-accent: (50: #00bf7d,
+  100: #00bf7d,
+  200: #00bf7d,
+  300: #00bf7d,
+  400: #00bf7d,
+  500: #00bf7d,
+  600: #00bf7d,
+  700: #00bf7d,
+  800: #00bf7d,
+  900: #00bf7d,
+  A100: #00bf7d,
+  A200: #00bf7d,
+  A400: #00bf7d,
+  A700: #00bf7d,
+  contrast: (50: #222,
+    100: #222,
+    200: #222,
+    300: #222,
+    400: #222,
+    500: #222,
+    600: #222,
+    700: #222,
+    800: #222,
+    900: #222,
+    A100: #222,
+    A200: #222,
+    A400: #222,
+    A700: #222,
+  ));
+
+$emu-theme-primary: mat-palette($emu-primary);
+$emu-theme-accent: mat-palette($emu-accent);
+$emu-theme-warn: mat-palette($mat-red);
+
+$on-dark: #fff;
+$on-light: #000;
+
+$emu-theme: mat-light-theme($emu-theme-primary, $emu-theme-accent, $emu-theme-warn);
+
+@include angular-material-theme($emu-theme);
